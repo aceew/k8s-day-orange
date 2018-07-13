@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webserver-orange
+  labels:
+    app: webserver-orange
+spec:
+  containers:
+    - name: webserver-orange
+      image: eu.gcr.io/merlingcp-203814/orangeaaron:1
+      ports:
+        - name: web
+          containerPort: 3000
+          protocol: TCP
