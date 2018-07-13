@@ -8,6 +8,7 @@ Setting up k8s on GCP.
 
 ```bash
 cd webserver
+
 ```
 
 ### Proxy to the remote control plane
@@ -40,4 +41,5 @@ Deployments sit on top of replica sets. They do the green blue deploys for you.
 
 Pods belong to RS, RS belongs to deployments. Deployments belong to services. Services are layer 4 TCP LBs.
 
+Services point to replica sets.
 Ingress controllers can sit on top of services.

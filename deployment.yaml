@@ -1,10 +1,27 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: orange-service
+  labels:
+    app: orange-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      name: http
+      targetPort: 3000
+  selector:
+    app: webserver-orange
+---
+
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: orange-deployment
   labels:
     app: webserver-orange
-    version: '5'
+    version: '7'
 spec:
   replicas: 3
   selector:
@@ -17,7 +34,7 @@ spec:
     spec:
       containers:
         - name: webserver-orange
-          image: eu.gcr.io/merlingcp-203814/orangeaaron:3
+          image: eu.gcr.io/merlingcp-203814/orangeaaron:4
           env:
             - name: WORLD
               value: Earth

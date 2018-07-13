@@ -6,7 +6,6 @@ const requestHandler = (request, response) => {
   response.setHeader('Content-Type', 'application/json');
   response.statusCode = 200; //see https://httpstatuses.com/
   console.log("Logs", (new Date().toTimeString()));
-  response.statusCode = 400;
   response.end(`{"Your":"Hello ${WORLD}"}`);
 }
 
