@@ -4,6 +4,7 @@ metadata:
   name: orange-deployment
   labels:
     app: webserver-orange
+    version: '5'
 spec:
   replicas: 3
   selector:
@@ -16,7 +17,23 @@ spec:
     spec:
       containers:
         - name: webserver-orange
-          image: eu.gcr.io/merlingcp-203814/orangeaaron:1
+          image: eu.gcr.io/merlingcp-203814/orangeaaron:3
+          env:
+            - name: WORLD
+              value: Earth
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 6
+            periodSeconds: 25
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 6
+            periodSeconds: 25
           ports:
             - name: web
               containerPort: 3000

@@ -4,6 +4,12 @@ Setting up k8s on GCP.
 
 ## Notes
 
+### Setup the command
+
+```bash
+cd webserver
+```
+
 ### Proxy to the remote control plane
 
 ```bash
@@ -14,6 +20,12 @@ kubectl proxy
 
 ```bash
 kubectl -n kube-system describe secret $(kubectl -n kube-system get secret)
+```
+
+### Logs
+
+```bash
+kubectl logs -f
 ```
 
 ### Apply kube spec

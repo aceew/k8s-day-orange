@@ -1,10 +1,13 @@
 const http = require('http');
 const port = 3000;
+const WORLD = process.env.WORLD || 'Nope';
 
 const requestHandler = (request, response) => {
   response.setHeader('Content-Type', 'application/json');
   response.statusCode = 200; //see https://httpstatuses.com/
-  response.end('{"Your":"Friendly JSON server"}');
+  console.log("Logs", (new Date().toTimeString()));
+  response.statusCode = 400;
+  response.end(`{"Your":"Hello ${WORLD}"}`);
 }
 
 const server = http.createServer(requestHandler);
