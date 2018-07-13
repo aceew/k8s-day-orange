@@ -2,7 +2,7 @@
 
 Setting up k8s on GCP.
 
-## Notes
+## Notes
 
 ### Setup the container
 
