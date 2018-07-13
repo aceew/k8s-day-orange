@@ -1,0 +1,23 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: orange-deployment
+  labels:
+    app: webserver-orange
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webserver-orange
+  template:
+    metadata:
+      labels:
+        app: webserver-orange
+    spec:
+      containers:
+        - name: webserver-orange
+          image: eu.gcr.io/merlingcp-203814/orangeaaron:1
+          ports:
+            - name: web
+              containerPort: 3000
+              protocol: TCP
