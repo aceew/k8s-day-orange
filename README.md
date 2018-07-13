@@ -41,3 +41,11 @@ kubectl apply -f <pod.yaml| deployment.yaml>
 - Pods belong to RS, RS belongs to deployments. Deployments belong to services. Services are layer 4 TCP LBs.
 - Services point to replica sets.
 - Ingress controllers can sit on top of services.
+
+### Cordon
+
+Don't schedule anything new on the node.
+
+```bash
+kubctl cordon <node_id>
+```
