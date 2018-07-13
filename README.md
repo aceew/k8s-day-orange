@@ -1,4 +1,4 @@
-# K8s Day with Jujhar
+# K8s Day
 
 Setting up k8s on GCP.
 
